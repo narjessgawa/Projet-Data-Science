@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+
+
+{% load static %}
+<title>{% block title %}Comment{% endblock %}</title>
+ 
+
+{% block contentT %}
+
+
+
+<br>
+<br><br>
+
+<br>
+<br>
+
+   
+   <!-- ==== Slider ===== -->
+   <div id="layerslider">
+      <!-- Slide 1 -->
+      <div class="ls-slide" data-ls="transition2d:94;timeshift:-2000;">
+         <!-- Background image -->
+         <img src="{% static 'img/slide2.jpg' %}" class="ls-bg"  alt="Slide background"/>
+  
+         <!-- Text -->
+         <div class="ls-l  container" data-ls="offsetyin:-50; durationin:1200; delayin:200; easingin:easeOutBack; offsetyout:bottom; durationout:400; parallaxlevel:1;">    
+          <br>  <div class="col-md-4 ">       <br>       <br>       <br>       <br>
+          <h1 style="color:white">Sent Comments</h1>
+
+            <div class="contact-icon fold small res-margin">
+               <!---icon-->
+               
+               <i class="fa fa-envelope top-icon"></i>
+               <br>
+
+<br>
+<br>
+  {% for comment in sent_comments %}
+    <!-- Preloader -->
+    <div id="loading">
+      <div id="loading-center">
+         <div id="loading-center-absolute">
+            <div class="object-load" id="object_one"></div>
+            <div class="object-load" id="object_two"></div>
+            <div class="object-load" id="object_three"></div>
+         </div>
+      </div>
+   </div>
+   <!-- /preloader -->
+               <!-- contact-icon info-->
+               <div class="contact-icon-info">
+                    <h5 sstyle="color:#efb60b"><i class="far fa-comments"></i>{{ comment.source_user.username }}</h5>
+                    <p style="color:black;font-size:20px">  {{ comment.content }}</p>
+                    <p style="color:red">Destination: {{ comment.destination_user.username }}</p>
+               </div>
+            </div>
+         </div>
+      {% empty %}
+        <p>No sent comments found.</p>
+      {% endfor %}
+
+      <h1 style="color:white ">Received Comments</h1>
+     
+      {% for comment in received_comments %}
+      <div class="warning">
+        <div class="description">
+          <h3>{{ comment.source_user.username }}</h3>
+          <h3><i class="far fa-comments"> {{ comment.content }} </i></h3>
+          <p style="color:red ;font-size:15px">Source User: {{ comment.source_user.username }}</p>
+          <br>
+        </div>
+      </div>
+      <br>
+      {% empty %}
+
+        <p>No received comments found.</p>
+      {% endfor %}
+    
+   
+
+
+      <style>
+        .warning {
+          border: 10px ridge #efb60b ;
+          background-color: #F2E9E6 ;
+          padding: 0.5rem;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .warning p {
+          font: small-caps bold 1.2rem sans-serif;
+          text-align: center;
+        }
+        
+        </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+         </div>
+         <!-- /ls-l -->
+         <!-- Parallax Images -->
+         <img src="{% static 'img/illustrations/slider-ornament1.png' %}" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="parallaxlevel:-6;">
+         <img src="{% static 'img/illustrations/slider-ornament2.png' %}" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="parallaxlevel:-6;">
+      </div>
+      <!-- Slide 1 ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

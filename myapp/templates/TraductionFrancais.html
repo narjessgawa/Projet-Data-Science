@@ -1,0 +1,59 @@
+{% extends 'base.html' %} 
+
+
+{% load static %}
+<title>{% block title %}Trduction French {% endblock %}</title>
+
+
+{% block content %}
+
+    
+<body><br><br><br><br><br><br>
+    <div class="warning"> 
+        <center>   
+			<h1>Original Question:</h1><br>
+			<p>{{ question }}</p>
+			
+			<button id="show-chams-btn" class="btn btn-primary" >Show Translated</button>
+
+			<div id="chams" style="display:none">
+			<h1>Translated Question:</h1>
+			<p>{{ translated_question }}</p>
+		    </div> 
+
+      </center><br><br>
+    </form>
+</div> 
+<br><br><br><br><br><br><br><br>
+<style>
+    .warning {
+      border: 10px ridge #DE5118 ;
+      background-color: #F2E9E6 ;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warning p {
+      font: small-caps bold 1.2rem sans-serif;
+      text-align: center;
+    }
+    
+    </style>
+
+	<script>
+		document.getElementById("show-chams-btn").addEventListener("click", function(){
+			document.getElementById("chams").style.display = "block";
+		});
+
+	</script>
+
+</body>
+</html>
+
+ 
+{% endblock %}
+
+
+
+

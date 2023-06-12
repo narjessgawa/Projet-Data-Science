@@ -1,0 +1,546 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+<title>{% block title %}SmartKids{% endblock %}</title>
+{% block contentT %}
+
+
+
+
+      <!-- ==== Services ==== -->
+      <section id="services" class="container-fluid bg-white">
+       
+            <div class="col-lg-12">
+               <!-- Section heading -->
+               <div class="section-heading">
+                
+                  <br>
+           
+
+  
+              
+<!-- Text -->
+<div class="ls-l chamss">
+ 
+  <h1 style="color:#efb60b">Question : 
+  <img src="{% static 'img/illustrations/header2.png' %}" alt="" style= "margin-left:85%"class="header-ornament img-responsive"/>
+  <img src="{% static 'img/illustrations/header1.png' %}" alt="" style= "margin-left:5%;margin-top:-8%"class="header-ornament img-responsive"/>        
+</h1>
+
+
+  <form method="post" action="{% url 'result' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+   <h2 style="color:white;font-size:23px"> {{ question }}<h2>
+    <h2 style="color:#efb60b">Answer : </h2>
+    <input type="text" name="answer" id="answer" ><br> 
+    <h3>Or </h3>
+      <input type="file" name="image"  accept="image/*">
+  
+    <input type="submit" value="Submit" class="btn btn-primary">
+
+ </form>  
+ <img src="{% static 'img/illustrations/1.gif' %}" alt="" style= "margin-left:77%;margin-top:-15%"class="header-ornament img-responsive"/> 
+
+ <form method="post">
+  {% csrf_token %}
+  
+  <input type="hidden" name="question" value="{{question}}">
+  <button type="submit" name="speak" class="chamspink" >Generate Sound</button>       
+  <div class="dropdown" >
+    <button class="chamspink dropdown-toggle" type="button" data-toggle="dropdown" name="Translation">Show Translation
+      <span class="caret"></span></button>
+     <ul class="dropdown-menu">
+      <li><a href="#" onclick="showTranslation('fr')">Show French Translation</a></li>
+      <li><a href="#" onclick="showTranslation('ar')">Show Arabic Translation</a></li>
+    </ul> 
+  </div>
+    
+ <img src="{% static 'img/illustrations/fleshe.gif' %}" alt="" style= "margin-left:77%;margin-top:-5%"class="header-ornament img-responsive"/> 
+ <div id="translation" style="display:none">
+  <h3 style="color:#efb60b">Translated Question:</h3><br>
+  <p style="color:white;font-size:20px" id="translated-question"></p>
+</div>
+  <button type="submit" name="next" class="chamsyellow" >Next </button>
+ </form>
+</center>
+
+</div> 
+
+
+<center><div class="circle-button"  style="margin-left:920px;margin-top:-130px">
+  <a onclick="showPopup()" style="background:#efb60b ; color:#b9334d ;font-size:30px">Options</a>
+  <div class="overlay"></div>
+  <div class="popup">
+      <h2>Choose an option</h2>
+<button id="show-formula-btn" class="btn btn-primary" onclick="openPopup()">Show Operator</button>
+<button id="show-operator-btn" class="btn btn-primary" onclick="openPopup()">Show Formula </button>
+<button id="show-Image-btn" class="btn btn-primary" onclick="openPop()" >Show Image</button>
+
+       <button onclick="hidePopup()" class="btn-success btn-lg" style="font-size: 18px; padding: 18px;">Cancel</button>
+    </div></div></center>
+
+</div ></div ></div ></div ></div >
+
+
+
+
+
+
+ <div id="myPop" class="x">
+  <div class="x-content">
+    <button onclick="closePop()" class="btn btn-primary" style="font-size:20px;color:white">Cancel</button>
+    <p><div id="image" style="display:none">
+     <center> <h2>Image:</h2><br>
+      <img src="{{ result_image_path }}" alt="Result image"  style="width:900px;height:180px">  </center>
+    </div>
+    <br><br>
+    
+  </div>
+</div>
+
+
+<br>
+
+
+
+<div id="myPopup" class="x">
+  <div class="x-content">
+    <button onclick="closePopup()" class="btn btn-primary" style="font-size:20px;color:white">Cancel</button>
+    <p><div id="formula" style="display:none">
+     <center> <h2>Operator :</h2><br>
+      <h1>{{ formula }}</h1>  </center>
+    </div>
+    <br><br>
+    <center> <div id="operator" style="display:none">
+      <h2>Formula :</h2><br>
+      <h1>{{ operator }}</h1>  </center>
+    </div> </p>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.getElementById("show-Image-btn").addEventListener("click", function(){
+      document.getElementById("image").style.display = "block";
+      
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+  });
+
+
+</script>
+
+
+<script>
+  
+  
+  var popup = document.querySelector('.popup');
+  var overlay = document.querySelector('.overlay');
+  document.getElementById("show-Image-btn").addEventListener("click", function(){
+      document.getElementById("Image").style.display = "block";
+      
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+  });
+
+</script>
+
+
+
+
+
+<style>
+  /* Style the popup container */
+  .popup-container {
+      position: fixed;
+      top: 30;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      display: none; /* Hide the popup by default */
+  }
+
+  /* Style the popup content */
+  .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<style>
+  .x {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .x-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #white;
+    float: right;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 40px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+</style>
+
+<script>
+  function openPopup() {
+    document.getElementById("myPopup").style.display = "block";
+  }
+  
+  function closePopup() {
+    document.getElementById("myPopup").style.display = "none";
+  }
+</script>  
+
+<script>
+  function openPop() {
+    document.getElementById("myPop").style.display = "block";
+  }
+  
+  function closePop() {
+    document.getElementById("myPop").style.display = "none";
+  }
+</script>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+    .chamss {
+      padding:40px !important;
+      text-align:center;
+      max-width:1500px;
+      border-radius: 50px;
+      left:25%!important;
+      top:25%!important;
+      margin-left:100px;
+      box-shadow: -1px 2px 2px 0px #555, inset 0 0 10px 0 #555;
+      -webkit-border-radius: 10px;
+      -khtml-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
+      border: #B78240 solid 10px;
+      background-color: #497959;
+      background-image: url("/static/img/illustrations/chalkboard.png");
+      background-size:100%;
+ 
+}
+
+
+.chamsyellow{
+  border:0px;
+  outline:0px;
+  color: white!important;
+  background : #efb60b ;
+  text-transform: uppercase;
+  font-weight:500;
+  font-family: 'Karla', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all .5s;
+  margin: 20px 0;
+  padding: 10px 40px;
+}
+
+
+.chamsgreen{
+  border:0px;
+  outline:0px;
+  color: white!important;
+  background : #45923B  ;
+  text-transform: uppercase;
+  font-weight:700;
+  font-family: 'Karla', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all .5s;
+  margin: 20px 0;
+  padding: 10px 40px;
+}
+
+
+
+.chamspink{
+  border:0px;
+  outline:0px;
+  color: white!important;
+  background : #DF3E5D  ;
+  text-transform: uppercase;
+  font-weight:700;
+  font-family: 'Karla', sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all .5s;
+  margin: 20px 0;
+  margin-left:-1100px;
+  padding: 10px 40px;
+}
+
+
+
+</style>
+
+
+
+
+
+  
+
+
+
+
+</style>
+
+
+
+
+<script>
+  
+  var popup = document.querySelector('.popup');
+  var overlay = document.querySelector('.overlay');
+
+  document.getElementById("show-formula-btn").addEventListener("click", function(){
+      document.getElementById("formula").style.display = "block";
+      
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+  });
+
+  document.getElementById("show-operator-btn").addEventListener("click", function(){
+      document.getElementById("operator").style.display = "block";
+      
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+  });
+</script>
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
+<style>
+    .warning {
+      border: 10px ridge #DE5118 ;
+      background-color: #F2E9E6 ;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warning p {
+      font: small-caps bold 1.2rem sans-serif;
+      text-align: center;
+    }
+    
+    </style>
+
+
+    <script>
+      function showTranslation(lang) {
+        var translation = "";
+        if (lang == "fr") {
+          translation = "{{ translation_fr }}";
+        } else if (lang == "ar") {
+          translation = "{{ translation_ar }}";
+        }
+        document.getElementById("translated-question").innerHTML = translation;
+        document.getElementById("translation").style.display = "block";
+      }
+      </script>
+
+      
+    <script>
+      var frBtn = document.getElementById("show-fr-btn");
+      var frDiv = document.getElementById("fr");
+      frBtn.addEventListener("click", function(){
+          if (frDiv.style.display === "none") {
+              frDiv.style.display = "block";
+          } else {
+              frDiv.style.display = "none";
+          }
+      });
+  
+      var arBtn = document.getElementById("show-ar-btn");
+      var arDiv = document.getElementById("ar");
+      arBtn.addEventListener("click", function(){
+          if (arDiv.style.display === "none") {
+              arDiv.style.display = "block";
+          } else {
+              arDiv.style.display = "none";
+          }
+      });
+  </script>
+    
+    
+    
+    
+  
+
+
+    <style>
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        z-index: 9999;
+      }
+  
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9998;
+      }
+        .circle-button {
+           position: relative;
+           width: 150px;
+           height: 130px;
+           border-radius: 50%;
+           background-color:#efb60b;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           overflow: hidden; 
+         }
+      
+  
+  
+    </style>
+  
+
+  
+  
+  
+    <script>
+      var popup = document.querySelector('.popup');
+      var overlay = document.querySelector('.overlay');
+  
+      function showPopup() {
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+      }
+  
+      function hidePopup() {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+      }
+  
+      function makeChoice(choice) {
+        alert('You chose ' + choice);
+        hidePopup();
+      }
+    </script>
+  
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+

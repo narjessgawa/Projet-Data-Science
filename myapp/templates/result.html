@@ -1,0 +1,76 @@
+
+
+
+{% extends 'base.html' %}
+
+
+{% load static %}
+<title>{% block title %}Quiz Results{% endblock %}</title>
+
+
+{% block contentT %}
+  <!-- ==== Reviews ==== --> 
+  <section id="reviews" class="bg-3 container-fluid">
+       <!-- Section heading -->
+       <div class="section-heading text-light">
+          <!-- heading Image -->
+          <div class="heading-ornament" data-0="opacity:1;"
+             data-100="transform:translatex(-300px);"
+             data-center-center="transform:translatey(0%);">
+             <img src="{% static 'img/illustrations/header5.png' %}" alt="" class="header-ornament img-responsive"/>
+          </div>
+            <h2>{{ result }}</h2>
+          {% if is_correct %}
+          <img src="{% static 'website/img/good1.gif' %}" alt="Result image"  width="400" height="300">
+          
+          <img src="{% static 'website/img/good2.gif' %}" alt="Result image"  width="400" height="300">
+          
+          <img src="{% static 'website/img/good3.gif' %}" alt="Result image"  width="400" height="300">
+          
+          <img src="{% static 'website/img/good4.gif' %}" alt="Result image"  width="400" height="300">
+         
+         {% else %}
+          <img src="{% static 'website/img/bad1.gif' %}" alt="Result image"   >
+          
+          <img src="{% static 'website/img/bad2.gif' %}" alt="Result image"  >
+          
+          <img src="{% static 'website/img/bad3.gif' %}" alt="Result image"   >
+         
+         {% endif %} 
+           <br> <br> 
+             <a href="{% url 'classification' %}" style="color:white;font-size:30px">Try another question</a>
+                 </center>
+          
+          
+         </div>
+         
+       </div>
+       <center>
+    
+      
+    </div>
+    <!-- /container-->
+ </section>
+ <!--/section -->
+
+
+<style>
+    .warning {
+      border: 10px ridge #DE5118 ;
+      background-color: #F2E9E6 ;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warning p {
+      font: small-caps bold 1.2rem sans-serif;
+      text-align: center;
+    }
+    
+    </style>
+</body>
+</html>
+
+{% endblock %}
+

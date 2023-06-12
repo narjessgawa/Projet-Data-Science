@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+<title>{% block title %}Mathemagical{% endblock %}</title>
+ 
+
+{% block contentT %}
+
+ <!-- Section Contact -->
+ <section id="contact" class="bg-primary no-bg-small-screens">
+    <div class="col-lg-12">
+       <!-- Section heading -->
+       <div class="section-heading">
+          <!-- heading Image -->
+          <div class="heading-ornament" data-0="opacity:1;"
+             data-100="transform:translatex(-300px);"
+             data-center-center="transform:translatey(0%);">
+             <img src="{% static 'img/illustrations/header3.png' %}" alt="" class="header-ornament img-responsive"/>
+          </div>
+          <h2>
+            Add New Question</h2>
+          <hr class="divider1"/>
+       </div>
+    </div>
+    <div class="container">
+       <div class="row">
+          <!-- Contact icons -->
+          <div class="col-md-12 contact-boxes">
+             <div class="col-lg-12 col-md-12">
+         
+
+              
+                   <!-- /contact-icon-->
+                </div>
+                <!-- /col-md-4-->
+             </div>
+             <!-- /col-lg -->
+          </div>
+          <div class="col-lg-5 col-md-5 res-margin">
+             <!-- /.container -->
+             <div class="form-style" id="contact_form">
+                <!-- Contact Form -->
+                <!-- Form Starts -->
+                <div class="form-group">
+            
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <br><br>
+                        <button class="btn" style="margin-left:80px" type="submit">Add Question</button>
+                    </form>
+
+                </div>
+                <!-- Contact results -->
+                <div id="contact_results"></div>
+             </div>
+             <!--/Contact_form -->
+          </div>
+          <!-- /col-lg-5-->
+       </div>
+       <!-- /.row-->
+    </div>
+    <!--/container -->	
+ </section>
+ <!-- /Section -->
+ <!-- Map  -->
+ <div class="container-fluid">
+    <!-- Map -->
+    <div type="hidden" style="display:none;" id="map-canvas"></div>
+ </div>
+ <!--/container  -->
+
+
+
+
+
+{% endblock %}
+ 

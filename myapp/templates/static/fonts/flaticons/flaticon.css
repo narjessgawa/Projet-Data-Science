@@ -1,0 +1,78 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("Flaticon.eot");
+  src: url("Flaticond41d.eot?#iefix") format("embedded-opentype"),
+       url("Flaticon.woff") format("woff"),
+       url("Flaticon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+font-style: normal;
+}
+
+.flaticon-people-1:before { content: "\f100"; }
+.flaticon-woman:before { content: "\f101"; }
+.flaticon-gamepad-controller:before { content: "\f102"; }
+.flaticon-chil-hand-on-the-hand-of-an-adult:before { content: "\f103"; }
+.flaticon-baby-face:before { content: "\f104"; }
+.flaticon-baby-2:before { content: "\f105"; }
+.flaticon-hand-up:before { content: "\f106"; }
+.flaticon-diaper:before { content: "\f107"; }
+.flaticon-paint-palette:before { content: "\f108"; }
+.flaticon-girl-with-ponytails:before { content: "\f109"; }
+.flaticon-walking-to-school:before { content: "\f10a"; }
+.flaticon-school-bus-front-with-passengers:before { content: "\f10b"; }
+.flaticon-train-2:before { content: "\f10c"; }
+.flaticon-sand-bucket:before { content: "\f10d"; }
+.flaticon-notebook:before { content: "\f10e"; }
+.flaticon-cubes:before { content: "\f10f"; }
+.flaticon-swing:before { content: "\f110"; }
+.flaticon-pacifier:before { content: "\f111"; }
+.flaticon-football:before { content: "\f112"; }
+.flaticon-bodysuit-1:before { content: "\f113"; }
+.flaticon-children-2:before { content: "\f114"; }
+.flaticon-jumping-rope:before { content: "\f115"; }
+.flaticon-bodysuit:before { content: "\f116"; }
+.flaticon-puzzle:before { content: "\f117"; }
+.flaticon-teddy-bear-1:before { content: "\f118"; }
+.flaticon-slide:before { content: "\f119"; }
+.flaticon-baby-1:before { content: "\f11a"; }
+.flaticon-playing:before { content: "\f11b"; }
+.flaticon-feeding:before { content: "\f11c"; }
+.flaticon-baby-boy-1:before { content: "\f11d"; }
+.flaticon-children-1:before { content: "\f11e"; }
+.flaticon-teddy-bear:before { content: "\f11f"; }
+.flaticon-train-1:before { content: "\f120"; }
+.flaticon-flowers:before { content: "\f121"; }
+.flaticon-baby-boy:before { content: "\f122"; }
+.flaticon-baby:before { content: "\f123"; }
+.flaticon-skipping-rope:before { content: "\f124"; }
+.flaticon-baby-girl:before { content: "\f125"; }
+.flaticon-train:before { content: "\f126"; }
+.flaticon-animals:before { content: "\f127"; }
+.flaticon-animal-1:before { content: "\f128"; }
+.flaticon-babies:before { content: "\f129"; }
+.flaticon-animal:before { content: "\f12a"; }
+.flaticon-people:before { content: "\f12b"; }
+.flaticon-baby-food:before { content: "\f12c"; }
+.flaticon-teeter:before { content: "\f12d"; }
+.flaticon-mother-and-child-with-balloons:before { content: "\f12e"; }
+.flaticon-playground:before { content: "\f12f"; }
+.flaticon-kids:before { content: "\f130"; }
+.flaticon-relationship:before { content: "\f131"; }
+.flaticon-children:before { content: "\f132"; }
+.flaticon-castle:before { content: "\f133"; }
+.flaticon-locomotive:before { content: "\f134"; }
+.flaticon-sister-and-brother:before { content: "\f135"; }
+.flaticon-happy-children:before { content: "\f136"; }
+.flaticon-family-group:before { content: "\f137"; }

@@ -1,0 +1,84 @@
+
+
+
+
+
+
+
+
+
+{% extends 'base.html' %} 
+
+
+{% load static %}
+<title>{% block title %}Formula{% endblock %}</title>
+
+
+{% block content %}
+
+    
+<body><br><br><br><br><br><br>
+
+
+  <div class="warning"> 
+  
+    <center>  <br> 
+  
+        <h2>Question:</h2>
+        <br> 
+        <p style="color:black">{{ question }}</p>
+        <br> 
+    
+        <button id="show-formula-btn" class="btn btn-primary" >Show Formula</button>
+        <button id="show-operator-btn" class="btn btn-primary" >Show Operator</button>
+        <br><br><br>
+    
+ 
+        <div id="formula" style="display:none">
+          <h2>Formula:</h2>
+          <h1>{{ formula }}</h1>
+        </div>
+        <br><br>
+       <div id="operator" style="display:none">
+          <h2>Operator:</h2>
+          <h1>{{ operator }}</h1>
+       </div> 
+        
+  </center><br><br>
+
+</div> 
+
+
+<br><br><br><br><br><br><br><br>
+<style>
+    .warning {
+      border: 10px ridge #DE5118 ;
+      background-color: #F2E9E6 ;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warning p {
+      font: small-caps bold 1.2rem sans-serif;
+      text-align: center;
+    }
+    
+    </style>
+    <script>
+      document.getElementById("show-formula-btn").addEventListener("click", function(){
+          document.getElementById("formula").style.display = "block";
+      });
+
+      document.getElementById("show-operator-btn").addEventListener("click", function(){
+          document.getElementById("operator").style.display = "block";
+      });
+  </script>
+  
+</body>
+</html>
+
+ 
+{% endblock %}
+
+

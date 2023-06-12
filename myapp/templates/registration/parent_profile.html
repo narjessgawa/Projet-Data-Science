@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block contentT %}
+
+
+
+
+      <!-- ==== Counter ==== -->	  
+      <section id="counter-section" class="container-fluid  bg-overlay">
+        <div class="container text-light">
+       
+           <h3 class="text-center header-h3">History</h3>
+           <div id="counter" class="row">
+   
+
+
+
+<h1>Parent Profile</h1>
+<p>Parent: {{ parent.username }}</p>
+
+<h2>Associated Students:</h2>
+<ul>
+  
+    <li>{{ student.id }}</li> 
+    <h3>Performance:</h3>
+    <table>
+      <tr>
+        <th>Date<br></th>
+        <br>
+        <th>   Question     <br></th>
+        <th>Solution Provided</th>
+        <th>Score</th>
+      </tr>
+      {% for performance in student.performance_set.all %}
+        <tr>
+          <td>{{ performance.date }}<br></td>
+          <td>{{ performance.question }}<br></td>
+          <td>{{ performance.solution_provided }}<br></td>
+          <td>{{ performance.score }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+</ul>
+
+              <!-- /col-lg -->
+           </div>
+           <!-- /row -->
+
+
+        </div>
+        <!-- /container -->
+     </section>
+     <!-- ==== Staff ==== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

@@ -1,0 +1,64 @@
+
+{% extends 'base.html' %} 
+
+
+{% load static %}
+<title>{% block title %}Generated Image{% endblock %}</title>
+
+
+{% block content %} 
+
+    
+<body><br><br><br><br><br><br>
+    <div class="warning"> 
+      <center>  <br>
+    <h2>Generated Image</h2>
+    {% if text2 %} 
+      <h1><strong>Question:</strong> {{ text }}</h1>
+    {% endif %} 
+ 
+    <button id="show-Image-btn" class="btn btn-primary" >Show Image</button>
+
+    <div id="Image" style="display:none">
+      <h2>Image :</h2>
+      {% if result_image_path %}
+      <img src="{{ result_image_path }}" alt="Result image"> 
+      {% endif %}   
+     </div>
+    <br><br>
+
+  </center><br><br>
+
+</div> 
+
+<script>
+  document.getElementById("show-Image-btn").addEventListener("click", function(){
+      document.getElementById("Image").style.display = "block";
+  });
+
+</script>
+
+
+<br><br><br><br><br><br><br><br>
+<style>
+    .warning {
+      border: 10px ridge #DE5118 ;
+      background-color: #F2E9E6 ;
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .warning p {
+      font: small-caps bold 1.2rem sans-serif;
+      text-align: center;
+    }
+    
+    </style>
+  
+</body>
+</html>
+
+ 
+{% endblock %}
+

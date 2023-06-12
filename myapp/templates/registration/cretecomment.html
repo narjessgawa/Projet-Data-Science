@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+<title>{% block title %}SmartKids{% endblock %}</title>
+{% block contentT %}
+
+    <!--/ Section --> 
+      <!-- ==== Reviews ==== --> 
+      <section id="reviews" class="bg-3 container-fluid">
+        <div class="container">
+           <!-- Section heading -->
+           <div class="section-heading text-light">
+              <!-- heading Image -->
+              <div class="heading-ornament" data-0="opacity:1;"
+                 data-100="transform:translatex(-300px);"
+                 data-center-center="transform:translatey(0%);">
+                 <img src="{% static 'img/illustrations/header5.png' %}" alt="" class="header-ornament img-responsive"/>
+              </div>
+              <h2>Create Comment</h2>
+              <hr class="divider1"/>
+           </div>
+           <div class="col-md-12"> 
+              <!-- Carousel -->
+              
+                 <!-- Testimonial 1 -->
+                 <div class="col-md-12">
+                   
+
+
+
+  <form method="POST" enctype="multipart/form-data"style="color:white ;  font-size:24px">
+    {% csrf_token %}
+    <div class="form-group" >
+      <label for="destination_user_id">Destination User:</label>
+      <select name="destination_user_id" required class="form-control">
+        
+          <option value={{form.destination_user}}>{{form.destination_user.username}}</option>
+        
+    </div>
+    <div class="form-group">
+      <label for="id_content">Content:</label>
+      <textarea class="form-control" id="id_content" name="content" rows="4"></textarea>
+    </div>
+
+   <center> <button type="submit" class="btn btn-primary">Submit</button>  </center>
+  </form>
+                    </div>
+                 </div>
+                 <!-- col-md-12 -->
+                
+              </div>
+              <!--/owl-testimonials -->
+           </div>
+           <!-- /col-md-12 -->
+        </div>
+        <!-- /container-->
+     </section>
+     <!--/section -->
+
+
+
+
+
+
+  {% endblock %}

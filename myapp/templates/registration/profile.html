@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+  
+{% block contentX %}
+
++
+<!-- profile.html -->
+<h1>{{ profile.user.username }}'s Profile</h1>
+<!-- Display other profile information here -->
+
+<h2>Send Comment</h2>
+<form method="post" action="{% url 'commentcreate' %}">
+    {% csrf_token %}
+    <input type="hidden" name="destination_user_id" value="{{ profile.user.id }}">
+    <textarea name="content" rows="4" cols="50"></textarea>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

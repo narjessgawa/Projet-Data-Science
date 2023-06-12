@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Login with Face Recognition</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <br>
+    <input class="form-control input-field" type="text" name="username" placeholder="Username" required>
+    <br>
+    <input class="btn " type="submit" value="Login">
+  </form>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').submit(function(e) {
+        e.preventDefault();
+
+        // Request camera access
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            // Setup video element to display camera feed
+            var video = document.createElement('video');
+            video.autoplay = true;
+            video.srcObject = stream;
+
+            // Wait for the video to be ready before capturing frame
+            video.onloadedmetadata = function(e) {
+              // Draw the current frame from the video to a canvas element
+              var canvas = document.createElement('canvas');
+              canvas.width = video.videoWidth;
+              canvas.height = video.videoHeight;
+              var context = canvas.getContext('2d');
+              context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+              // Send the image data to the server for face recognition
+              $.ajax({
+                url: "{% url 'login' %}",
+                method: "POST",
+                data: {
+                  'image': canvas.toDataURL('image/jpeg')
+                },
+                success: function(response) {
+                  alert(response.message);
+                },
+                error: function(xhr, status, error) {
+                  alert(xhr.responseText);
+                }
+              });
+
+              // Clean up
+              stream.getTracks().forEach(function(track) {
+                track.stop();
+              });
+              video.remove();
+              canvas.remove();
+            };
+          })
+          .catch(function(error) {
+            alert('Error: ' + error.message);
+          });
+      });
+    });
+  </script>
+{% endblock %}

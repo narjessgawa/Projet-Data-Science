@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+<title>{% block title %}TextToSpeech{% endblock %}</title>
+
+
+{% block content %}
+
+
+
+
+      <!-- ==== Slider ===== -->
+      <div id="layerslider">
+
+
+
+
+      
+
+        <!-- Slide 3 -->
+        <div class="ls-slide" data-ls="transition2d:94;timeshift:-2000;">   
+           <!-- Background image -->
+           <img src="{% static 'img/slide3.jpg' %}" class="ls-bg"  alt="Slide background"/>
+
+
+           
+           
+           <!-- Text -->
+           <div class="ls-l header-text container" data-ls="offsetyin:-50; durationin:10; delayin:200; easingin:easeOutBack; offsetyout:bottom; durationout:400; parallaxlevel:1;" >
+              <h2>The Question is:</h2>
+              <p class="subtitle hidden-xs"> {{question}} </p>
+              <!-- Button -->
+              <div class="page-scroll hidden-xs">
+
+
+
+                <form method="post">
+                    {% csrf_token %} 
+                    <input type="hidden" name="question" value="{{question}}">
+                    <button type="submit" name="speak" class="btn btn-primary" >Generate Sound</button>
+                    <button type="submit" name="next"  class="btn btn-primary" >Next</button>  
+                </form>
+         
+
+               
+              </div>
+           </div>
+           <!-- /ls-l -->
+           <!-- Parallax Images -->
+           <img src="{% static 'img/illustrations/slider-ornament1.png' %}" class="ls-l img-responsive hidden-xs hidden-sm parallax1" alt="" data-ls="parallaxlevel:-15;" style="margin-top:-100%">
+           <img src="{% static 'img/illustrations/slider-ornament2.png' %}" class="ls-l img-responsive hidden-xs hidden-sm parallax2" alt="" data-ls="parallaxlevel:-16;" style="margin-top:30%">
+        </div>
+        <!-- Slide 3 ends -->
+
+
+
+        
+     </div>
+     <!-- /Layerslider ends-->
+
+
+
+         <!-- /ls-l -->
+
+
+{% endblock %}
+
+

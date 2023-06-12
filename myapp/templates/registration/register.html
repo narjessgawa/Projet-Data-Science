@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Register</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    {{ form.as_p }} 
+    <select id="id_role" name="role" class="form-control input-field">
+      <option value="Parent">Parent</option>
+      <option value="Professor">Professor</option>
+      <option value="Student">Student</option>
+    </select>
+    {% if selected_option == "Student" %}
+      <input class="form-control input-field" type="text" name="student_id" placeholder="Identifier" required style="display:none;">
+      <select id="id_level" name="level" required style="display:none;" class="form-control input-field">
+        <option value="1th">1th</option>
+        <option value="2th">2th</option>
+        <option value="3th">3th</option>
+        <option value="4th">4th</option>
+        <option value="5th">5th</option>
+        <option value="6th">6th</option>
+      </select>
+    {% else %}
+      <select  name="level" type="hidden" required class="form-control input-field">
+        <option value="1th">1th</option>
+        <option value="2th">2th</option>
+        <option value="3th">3th</option>
+        <option value="4th">4th</option>
+        <option value="5th">5th</option>
+        <option value="6th">6th</option>
+      </select>
+      <input type="text" class="form-control input-field" name="student_id" placeholder="Identifier" >
+    {% endif %}
+
+    {% if selected_option == "Parent" %}
+        <input class="form-control input-field" type="text" name="student_id1" placeholder="Identifier" required style="display:none;">
+    {% else %}
+
+    <input class="form-control input-field" type="text" name="student_id1" placeholder="Identifier"  >
+
+    {% endif %}
+    {% if selected_option == "Professor" %}
+        <input class="form-control input-field" type="text" name="cin" placeholder="cin" required style="display:none;">
+    {% else %}
+
+    <input class="form-control input-field" type="text" name="cin" placeholder="cin"  >
+
+    {% endif %}
+
+    
+    <input class="form-control input-field" type="text" name="username" placeholder="Username" required>
+    
+    <input id="face-data" type="hidden" name="face_encoding">
+    <br>
+  <button class="btn " type="submit">Register</button>
+  </form>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var roleField = document.getElementById("id_role");
+      var identifierField = document.querySelector('input[name="student_id"]');
+      var identifierField2 = document.querySelector('input[name="student_id1"]');
+      var identifierField3 = document.querySelector('input[name="cin"]');
+
+      var identifierField1 = document.querySelector('select[name="level"]');
+
+      // Hide the identifier fields by default
+      identifierField.style.display = "none";
+      identifierField2.style.display = "none";
+      identifierField1.style.display = "none";
+      identifierField3.style.display = "none";
+
+
+      
+      // Listen for changes to the role field
+      roleField.addEventListener("change", function() {
+        if (roleField.value == "Student") {
+          // Show the identifier fields if "Student" is selected
+          identifierField.style.display = "block";
+          identifierField1.style.display = "block";
+        } else {
+          // Hide the identifier fields for all other options
+          identifierField.style.display = "none";
+          identifierField1.style.display = "none";
+        }
+        if (roleField.value == "Parent") {
+          // Show the identifier fields if "Student" is selected
+          identifierField2.style.display = "block";
+        } else {
+          // Hide the identifier fields for all other options
+          identifierField2.style.display = "none";
+        }
+        if (roleField.value == "Professor") {
+          // Show the identifier fields if "Student" is selected
+          identifierField3.style.display = "block";
+        } else {
+          // Hide the identifier fields for all other options
+          identifierField3.style.display = "none";
+        }
+      });
+    });
+  </script>
+    
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.7.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@0.4.2"></script>
+{% endblock %}

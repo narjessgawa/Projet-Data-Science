@@ -1,0 +1,21 @@
+#page-width {
+									max-width:1200px;
+									margin:0 auto;
+									box-shadow: 10px 10px 100px -19px rgba(0,0,0,0.75);
+									background:#fff;
+									}
+								#page-width .nav,
+								#page-width #loading,
+								#page-width .navbar-custom,							
+								#page-width #layerslider,
+								#page-width #nav,
+								#page-width footer,
+								#page-width #video-header{
+									max-width:1200px;
+									margin:0 auto;
+								}
+
+								#page-width .header-text {
+									max-width:40%!important;								
+								}
+							

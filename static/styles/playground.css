@@ -1,0 +1,293 @@
+
+/*
+Template Name: Childhood
+Color style: Playground
+*/
+
+/*________ Purple ________ */
+
+.feature-tree .feature-box:nth-child(2n) .feature-box-content,
+.feature-tree .feature-box:nth-child(2n) .feature-box-content:before,
+.feature-tree .feature-box:nth-child(2n) .feature-box-content:after,
+.feature-tree .feature-box:nth-child(2n) .icon,
+.bg-5,
+.our-staff .staff-content,
+.panel-heading a:focus,
+.panel-heading a.active,
+.panel-heading a,
+.serviceBox .service-icon,
+.label-default,
+.list-group-item,
+.owl-prev:hover,
+.owl-next:hover,
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span,
+.pager li>a,
+.pager li>span,
+.pagination>li>a:hover,
+.pagination>li>a:focus,
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover,
+.testimonial .testimonial-pic:after,
+.nav-pills>li.active>a,
+.nav-pills>li>a:hover,
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover,
+.nav-pills.nav>li>a:focus,
+.back-to-top i,
+.object-load,
+.btn.color2,
+.color2,
+.alert-info,
+.contact-icon .top-icon,
+.our-team .pic:before,
+.our-team .pic:after,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+	background-color: #9055A2;
+}
+
+.post-slide .post-bar li a:hover,
+.nav-pills.pills-custom>li>a,
+a,
+.back-to-top i:hover,
+.post-comment a:hover,
+.our-team .social li a:hover {
+	color: #9055A2;
+}
+
+.comments-block .media-object,
+.testimonial .pic,
+.img-circle.border,
+.section-heading,
+.box_icon:hover .icon>.info,
+.textarea-field:focus,
+.input-field:focus,
+.form-control:focus {
+	border-color: #9055A2;
+}
+
+.serviceBox .service-icon:after {
+	border-top: 25px solid #9055A2;
+}
+
+/*________ Orange ________ */
+
+ul.social-list li:hover,
+ul.social-list li:focus,
+.btn,
+.feature-tree .icon,
+.feature-tree .feature-box-content:before,
+.feature-tree .feature-box-content:after,
+.feature-tree .feature-box-content,
+.post-slide .post-date,
+.our-staff .social-links li a,
+.our-staff .contact:hover,
+.our-staff .contact:hover:after,
+.panel-heading a.collapsed,
+.btn-primary,
+a.list-group-item:focus,
+a.list-group-item:hover,
+button.list-group-item:focus,
+button.list-group-item:hover,
+.nav-pills>li>a,
+.nav.nav-tabs>li.active>a:hover,
+.nav.nav-tabs>li.active>a:focus,
+.nav.nav-tabs>li>a:hover,
+.nav.nav-tabs>li.active>a,
+.open>.dropdown-toggle.btn-primary:focus,
+.open>.dropdown-toggle.btn-primary:hover,
+.navbar-custom ul.nav ul.dropdown-menu li a,
+.nav-pills .nav>li>a:focus,
+.pager li>a:hover,
+.pager li>a:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.pagination>li>a,
+.pagination>li>span,
+.owl-prev,
+.owl-next,
+.box,
+.table-striped,
+.dropdown-menu,
+.nav.nav-tabs>li>a:hover,
+.nav.nav-tabs>li.active>a:hover,
+.nav.nav-tabs>li.active>a:focus,
+.nav.nav-tabs>li.active>a,
+.color1,
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover,
+.bg-4,
+.back-to-top i:hover,
+.post-slide .post-date {
+	background-color: #F68657;
+}
+
+.navbar-custom .nav>.active>a,
+a,
+.post-slide .post-title a,
+i.icon-margin,
+ul.custom li:before,
+h1,
+.post-info i,
+a:hover,
+a:focus,
+h6:before,
+.our-staff .post,
+.post-slide .post-title>a:hover,
+blockquote:before,
+.navbar-custom li:after,
+.navbar-toggle i:hover,
+.navbar-custom ul.nav li a:hover {
+	color: #F68657;
+}
+
+.post-slide .post-img,
+.btn:hover,
+.btn:focus,
+.open>.dropdown-toggle.btn-default:focus,
+.open>.dropdown-toggle.btn-default:hover,
+.form-control,
+.testimonial:hover .testimonial-pic {
+	border-color: #F68657;
+}
+
+/* darker color for button shadow */
+
+.btn {
+	box-shadow: 0px 7px 0px #9c5232;
+}
+
+/*________ Blue ________ */
+
+
+ul.social-list li,
+.btn:hover,
+.btn:focus,
+.feature-tree .feature-box:nth-child(3n) .feature-box-content,
+.feature-tree .feature-box:nth-child(3n) .feature-box-content:before,
+.feature-tree .feature-box:nth-child(3n) .feature-box-content:after,
+.panel-heading a:hover,
+.panel-heading a.collapsed:hover,
+.feature-tree .feature-box:nth-child(3n) .icon,
+.our-staff .contact,
+.our-staff .contact:after,
+.nav.nav-tabs>li>a,
+.bg-secondary,
+.btn-primary:hover,
+.blog-prev .date,
+.blog-prev .date-icon,
+.color3,
+.our-team .social,
+.bg-primary,
+.navbar-custom ul.nav ul.dropdown-menu li a:hover,
+ul.social-list li a {
+	background-color: #2597ca;
+}
+
+.blog-tags a,
+.post-slide .post-title a:hover,
+.header-h3,
+.blog-caption h4:hover,
+.smaller.social-media i {
+	color: #2597ca;
+}
+
+#services .media img,
+.our-staff .pic {
+	border-color: #2597ca;
+}
+
+.bg-overlay {
+	box-shadow: inset 0 0 0 1000px rgba(14, 87, 119, 0.71);
+}
+
+#video-header .video-text{
+	background: rgba(14, 87, 119, 0.71);
+}
+
+/* darker color for button shadow */
+
+.btn:hover {
+	box-shadow: 0px 4px 0px #1e7ba5;
+}
+
+/*________ Pink ________ */
+
+.feature-tree .feature-box:nth-child(4n) .feature-box-content,
+.feature-tree .feature-box:nth-child(4n) .feature-box-content:before,
+.feature-tree .feature-box:nth-child(4n) .feature-box-content:after,
+.feature-tree .feature-box:nth-child(4n) .icon,
+.post-slide .post-bar,
+.bg-6,
+.navbar,
+.btn2:hover,
+.btn2:focus,
+.navbar-collapse {
+	background-color: #E53A40;
+}
+
+.testimonial .icon,
+.social-networks a:hover{
+	color: #E53A40;
+}
+/* darker color for button shadow */
+
+.btn2:hover,
+.btn2:focus {
+	box-shadow: 0px 4px 0px #a9252a;
+}
+
+/*________ Green ________ */
+
+.post-comment,
+.btn2,
+.post-slide .month,
+.bg-3,
+.our-staff .social-links li a:hover,
+.our-staff .social-links li a:focus {
+	background-color: #8BC34A;
+}
+
+a:hover {
+	color: #8BC34A;
+}
+
+/* darker color for button shadow */
+
+.btn2 {
+	box-shadow: 0px 7px 0px #638e32;
+}
+
+
+/*________ Light Blue  ________ */
+
+.breadcrumb a:hover,
+.breadcrumb a:focus,
+.breadcrumb .active,
+.header-text h1,footer a  {
+	color: #e4f4fb;
+}
+
+.bg-primary,
+.post-slide .post-content,
+.comment.media,
+.tab-content>.active,
+.serviceBox,
+.pricingTable:hover .pricingTable-header {
+	background-color: #e4f4fb;
+}
+
+.bg-primary .fold:before,
+.bg-primary .fold:hover:before {
+	border-color: #ddd #e4f4fb;
+}
+
+
